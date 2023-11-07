@@ -28,29 +28,38 @@
  "ci: Configure CI/CD for automated testing and deployment"
  "init: Initial project setup"
 
+# development-Method:
+Agile Development: A software development approach that emphasizes flexibility, collaboration, and iterative development.
+Waterfall Model: A traditional software development model where each phase must be completed before the next phase begins.
+Scrum: An Agile framework that divides work into time-boxed iterations called "sprints."
+Pair Programming: Two developers work together at a single computer, with one typing (the driver) and the other reviewing the work (the observer).
+Test-Driven Development (TDD): A development methodology that focuses on writing tests before writing the code.
+Code Review: A process where developers review each other's code for quality, security, and correctness.
+Version Control:
+auth:
+Continuous Integration (CI): The practice of automatically integrating code changes into a shared repository multiple times a day.
+SOLID Principles: A set of five design principles that help create well-structured, maintainable software.
+Design Patterns: Reusable solutions to common problems in software design.
 # footer():
-development-Method: 
   
 ## the way to commit is [
-type: ---
+type(development-Method ):
 body:
 -
 -
 footer:
 closes 
-development-Method 
 with
 ]
 
 ### Example:[
-feat: add user authentication
+feat(auth): add user authentication
 
 - Implemented user registration and login functionality.
 - Created user model and routes.
 - Added password hashing for security.
 
-Closes #123
-development-Method 
+Closes #123.
 with: Jubair
 ]
   
@@ -58,9 +67,9 @@ with: Jubair
 const { execSync } = require('child_process');
 
 // Define your commit message parts
-const type = 'feat'; // The commit type (e.g., feat, fix, chore, etc.)
+const type = 'feat(auth)'; // The commit type (e.g., feat, fix, chore, etc.)
 const body = 'Implemented user registration and login functionality.\n- Created user model and routes.\n- Added password hashing for security.';
-const footer = 'Closes #123'; // Optional footer with references
+const footer = 'Closes #123.\n with: Jubair'; // Optional footer with references
 
 // Combine the parts to create the commit message
 const commitMessage = `${type}: ${body}\n\n${footer}`;
