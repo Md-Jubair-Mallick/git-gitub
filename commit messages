@@ -1,0 +1,77 @@
+# type(it's uses):
+01) init: Used for the initial commit when setting up a new project or repository.
+02) feat: Used for new features or additions to the codebase.
+03) fix: Used for bug fixes and corrections.
+04) chore: Used for maintenance tasks or general housekeeping.
+05) docs: Used for documentation changes, such as updating comments, README files, or inline documentation.
+06) refactor: Used for code refactoring, restructuring, or improving code without changing its functionality.
+07) test: Used for adding or modifying tests.
+08) style: Used for code style changes (e.g., formatting, white-space, linting).
+09) ci: Used for changes to the continuous integration (CI) pipeline.
+10) build: Used for changes related to the build system, such as configuration or scripts.
+11) perf: Used for performance-related improvements.
+12) revert: Used when reverting a previous commit.
+13) merge: Used to indicate a merge of branches.
+
+# body(acording to type):
+ "feat: Add user registration functionality"
+ "fix: Resolve issue with login not working"
+ "refactor: Optimize database query performance"
+ "chore: Update dependencies to the latest versions"
+ "docs: Update API documentation for endpoints"
+ "style: Format code using Prettier"
+ "test: Add unit tests for authentication module"
+ "perf: Speed up image loading with lazy loading"
+ "revert: Revert changes in commit a1b2c3d"
+ "Merge branch 'feature/xyz' into main"
+ "build: Update webpack configuration"
+ "ci: Configure CI/CD for automated testing and deployment"
+ "init: Initial project setup"
+
+# footer():
+development-Method: 
+  
+## the way to commit is [
+type: ---
+body:
+-
+-
+footer:
+closes 
+development-Method 
+with
+]
+
+### Example:[
+feat: add user authentication
+
+- Implemented user registration and login functionality.
+- Created user model and routes.
+- Added password hashing for security.
+
+Closes #123
+development-Method 
+with: Jubair
+]
+  
+#### automaite it using Node.js[
+const { execSync } = require('child_process');
+
+// Define your commit message parts
+const type = 'feat'; // The commit type (e.g., feat, fix, chore, etc.)
+const body = 'Implemented user registration and login functionality.\n- Created user model and routes.\n- Added password hashing for security.';
+const footer = 'Closes #123'; // Optional footer with references
+
+// Combine the parts to create the commit message
+const commitMessage = `${type}: ${body}\n\n${footer}`;
+
+try {
+  // Run the git commit command with the structured message
+  execSync(`git commit -m "${commitMessage}"`);
+  console.log('Git commit successful.');
+} catch (error) {
+  console.error(`Git commit failed: ${error.message}`);
+}
+]
+
+
